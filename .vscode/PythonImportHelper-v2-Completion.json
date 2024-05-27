@@ -1,0 +1,339 @@
+[
+    {
+        "label": "os",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "os",
+        "description": "os",
+        "detail": "os",
+        "documentation": {}
+    },
+    {
+        "label": "create_engine",
+        "importPath": "sqlalchemy",
+        "description": "sqlalchemy",
+        "isExtraImport": true,
+        "detail": "sqlalchemy",
+        "documentation": {}
+    },
+    {
+        "label": "Table",
+        "importPath": "sqlalchemy",
+        "description": "sqlalchemy",
+        "isExtraImport": true,
+        "detail": "sqlalchemy",
+        "documentation": {}
+    },
+    {
+        "label": "Column",
+        "importPath": "sqlalchemy",
+        "description": "sqlalchemy",
+        "isExtraImport": true,
+        "detail": "sqlalchemy",
+        "documentation": {}
+    },
+    {
+        "label": "Integer",
+        "importPath": "sqlalchemy",
+        "description": "sqlalchemy",
+        "isExtraImport": true,
+        "detail": "sqlalchemy",
+        "documentation": {}
+    },
+    {
+        "label": "String",
+        "importPath": "sqlalchemy",
+        "description": "sqlalchemy",
+        "isExtraImport": true,
+        "detail": "sqlalchemy",
+        "documentation": {}
+    },
+    {
+        "label": "DECIMAL",
+        "importPath": "sqlalchemy",
+        "description": "sqlalchemy",
+        "isExtraImport": true,
+        "detail": "sqlalchemy",
+        "documentation": {}
+    },
+    {
+        "label": "MetaData",
+        "importPath": "sqlalchemy",
+        "description": "sqlalchemy",
+        "isExtraImport": true,
+        "detail": "sqlalchemy",
+        "documentation": {}
+    },
+    {
+        "label": "DateTime",
+        "importPath": "sqlalchemy",
+        "description": "sqlalchemy",
+        "isExtraImport": true,
+        "detail": "sqlalchemy",
+        "documentation": {}
+    },
+    {
+        "label": "sessionmaker",
+        "importPath": "sqlalchemy.orm",
+        "description": "sqlalchemy.orm",
+        "isExtraImport": true,
+        "detail": "sqlalchemy.orm",
+        "documentation": {}
+    },
+    {
+        "label": "load_dotenv",
+        "importPath": "dotenv",
+        "description": "dotenv",
+        "isExtraImport": true,
+        "detail": "dotenv",
+        "documentation": {}
+    },
+    {
+        "label": "load_dotenv",
+        "importPath": "dotenv",
+        "description": "dotenv",
+        "isExtraImport": true,
+        "detail": "dotenv",
+        "documentation": {}
+    },
+    {
+        "label": "load_dotenv",
+        "importPath": "dotenv",
+        "description": "dotenv",
+        "isExtraImport": true,
+        "detail": "dotenv",
+        "documentation": {}
+    },
+    {
+        "label": "datetime",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "datetime",
+        "description": "datetime",
+        "detail": "datetime",
+        "documentation": {}
+    },
+    {
+        "label": "requests",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "requests",
+        "description": "requests",
+        "detail": "requests",
+        "documentation": {}
+    },
+    {
+        "label": "pandas",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "pandas",
+        "description": "pandas",
+        "detail": "pandas",
+        "documentation": {}
+    },
+    {
+        "label": "store_news_data",
+        "importPath": "db_operations",
+        "description": "db_operations",
+        "isExtraImport": true,
+        "detail": "db_operations",
+        "documentation": {}
+    },
+    {
+        "label": "store_stock_data",
+        "importPath": "db_operations",
+        "description": "db_operations",
+        "isExtraImport": true,
+        "detail": "db_operations",
+        "documentation": {}
+    },
+    {
+        "label": "http.client",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "http.client",
+        "description": "http.client",
+        "detail": "http.client",
+        "documentation": {}
+    },
+    {
+        "label": "json",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "json",
+        "description": "json",
+        "detail": "json",
+        "documentation": {}
+    },
+    {
+        "label": "store_news_data",
+        "kind": 2,
+        "importPath": "db_operations",
+        "description": "db_operations",
+        "peekOfCode": "def store_news_data(news_data):\n    # Insert data into the database\n    for news in news_data:\n        news_record = {\n            'article_id': news['id'],\n            'title': news['title'],\n            'text': news['text'],\n            'url': news['url'],\n            'publish_date': news['publish_date'],\n            'author': ', '.join(news['authors']) if 'authors' in news else news['author'],",
+        "detail": "db_operations",
+        "documentation": {}
+    },
+    {
+        "label": "store_stock_data",
+        "kind": 2,
+        "importPath": "db_operations",
+        "description": "db_operations",
+        "peekOfCode": "def store_stock_data(stock_data):\n    # Insert data into the database\n    stock_record = {\n        'ticker': stock_data['ticker'],\n        'name': stock_data['name'],\n        'volume': stock_data['volume'],\n        'price': stock_data['price'],\n        'change': stock_data['change'],\n        'date': datetime.datetime.now()\n    }",
+        "detail": "db_operations",
+        "documentation": {}
+    },
+    {
+        "label": "DB_USER",
+        "kind": 5,
+        "importPath": "db_operations",
+        "description": "db_operations",
+        "peekOfCode": "DB_USER = os.getenv('DB_USER') \nDB_PASSWORD = os.getenv('DB_PASSWORD')\nDB_HOST = os.getenv('DB_HOST')\nDB_NAME = os.getenv('DB_NAME')\n# Define database connection\nDATABASE_URL = f'mysql+pymysql://{DB_USER}:{DB_PASSWORD}@{DB_HOST}/{DB_NAME}'\nengine = create_engine(DATABASE_URL)\nSession = sessionmaker(bind=engine)\nsession = Session()\n# Define metadata",
+        "detail": "db_operations",
+        "documentation": {}
+    },
+    {
+        "label": "DB_PASSWORD",
+        "kind": 5,
+        "importPath": "db_operations",
+        "description": "db_operations",
+        "peekOfCode": "DB_PASSWORD = os.getenv('DB_PASSWORD')\nDB_HOST = os.getenv('DB_HOST')\nDB_NAME = os.getenv('DB_NAME')\n# Define database connection\nDATABASE_URL = f'mysql+pymysql://{DB_USER}:{DB_PASSWORD}@{DB_HOST}/{DB_NAME}'\nengine = create_engine(DATABASE_URL)\nSession = sessionmaker(bind=engine)\nsession = Session()\n# Define metadata\nmetadata = MetaData()",
+        "detail": "db_operations",
+        "documentation": {}
+    },
+    {
+        "label": "DB_HOST",
+        "kind": 5,
+        "importPath": "db_operations",
+        "description": "db_operations",
+        "peekOfCode": "DB_HOST = os.getenv('DB_HOST')\nDB_NAME = os.getenv('DB_NAME')\n# Define database connection\nDATABASE_URL = f'mysql+pymysql://{DB_USER}:{DB_PASSWORD}@{DB_HOST}/{DB_NAME}'\nengine = create_engine(DATABASE_URL)\nSession = sessionmaker(bind=engine)\nsession = Session()\n# Define metadata\nmetadata = MetaData()\n# Define news data table",
+        "detail": "db_operations",
+        "documentation": {}
+    },
+    {
+        "label": "DB_NAME",
+        "kind": 5,
+        "importPath": "db_operations",
+        "description": "db_operations",
+        "peekOfCode": "DB_NAME = os.getenv('DB_NAME')\n# Define database connection\nDATABASE_URL = f'mysql+pymysql://{DB_USER}:{DB_PASSWORD}@{DB_HOST}/{DB_NAME}'\nengine = create_engine(DATABASE_URL)\nSession = sessionmaker(bind=engine)\nsession = Session()\n# Define metadata\nmetadata = MetaData()\n# Define news data table\nnews_data_table = Table('news_data', metadata,",
+        "detail": "db_operations",
+        "documentation": {}
+    },
+    {
+        "label": "DATABASE_URL",
+        "kind": 5,
+        "importPath": "db_operations",
+        "description": "db_operations",
+        "peekOfCode": "DATABASE_URL = f'mysql+pymysql://{DB_USER}:{DB_PASSWORD}@{DB_HOST}/{DB_NAME}'\nengine = create_engine(DATABASE_URL)\nSession = sessionmaker(bind=engine)\nsession = Session()\n# Define metadata\nmetadata = MetaData()\n# Define news data table\nnews_data_table = Table('news_data', metadata,\n    Column('id', Integer, primary_key=True),\n    Column('article_id', Integer, nullable=False),",
+        "detail": "db_operations",
+        "documentation": {}
+    },
+    {
+        "label": "engine",
+        "kind": 5,
+        "importPath": "db_operations",
+        "description": "db_operations",
+        "peekOfCode": "engine = create_engine(DATABASE_URL)\nSession = sessionmaker(bind=engine)\nsession = Session()\n# Define metadata\nmetadata = MetaData()\n# Define news data table\nnews_data_table = Table('news_data', metadata,\n    Column('id', Integer, primary_key=True),\n    Column('article_id', Integer, nullable=False),\n    Column('title', String(255), nullable=False),",
+        "detail": "db_operations",
+        "documentation": {}
+    },
+    {
+        "label": "Session",
+        "kind": 5,
+        "importPath": "db_operations",
+        "description": "db_operations",
+        "peekOfCode": "Session = sessionmaker(bind=engine)\nsession = Session()\n# Define metadata\nmetadata = MetaData()\n# Define news data table\nnews_data_table = Table('news_data', metadata,\n    Column('id', Integer, primary_key=True),\n    Column('article_id', Integer, nullable=False),\n    Column('title', String(255), nullable=False),\n    Column('text', String, nullable=False),",
+        "detail": "db_operations",
+        "documentation": {}
+    },
+    {
+        "label": "session",
+        "kind": 5,
+        "importPath": "db_operations",
+        "description": "db_operations",
+        "peekOfCode": "session = Session()\n# Define metadata\nmetadata = MetaData()\n# Define news data table\nnews_data_table = Table('news_data', metadata,\n    Column('id', Integer, primary_key=True),\n    Column('article_id', Integer, nullable=False),\n    Column('title', String(255), nullable=False),\n    Column('text', String, nullable=False),\n    Column('url', String(255)),",
+        "detail": "db_operations",
+        "documentation": {}
+    },
+    {
+        "label": "metadata",
+        "kind": 5,
+        "importPath": "db_operations",
+        "description": "db_operations",
+        "peekOfCode": "metadata = MetaData()\n# Define news data table\nnews_data_table = Table('news_data', metadata,\n    Column('id', Integer, primary_key=True),\n    Column('article_id', Integer, nullable=False),\n    Column('title', String(255), nullable=False),\n    Column('text', String, nullable=False),\n    Column('url', String(255)),\n    Column('publish_date', DateTime, nullable=False),\n    Column('author', String(255)),",
+        "detail": "db_operations",
+        "documentation": {}
+    },
+    {
+        "label": "news_data_table",
+        "kind": 5,
+        "importPath": "db_operations",
+        "description": "db_operations",
+        "peekOfCode": "news_data_table = Table('news_data', metadata,\n    Column('id', Integer, primary_key=True),\n    Column('article_id', Integer, nullable=False),\n    Column('title', String(255), nullable=False),\n    Column('text', String, nullable=False),\n    Column('url', String(255)),\n    Column('publish_date', DateTime, nullable=False),\n    Column('author', String(255)),\n    Column('language', String(10)),\n    Column('source_country', String(10)),",
+        "detail": "db_operations",
+        "documentation": {}
+    },
+    {
+        "label": "stocks_data_table",
+        "kind": 5,
+        "importPath": "db_operations",
+        "description": "db_operations",
+        "peekOfCode": "stocks_data_table = Table('stock_data', metadata,\n    Column('id', Integer, primary_key=True),\n    Column('ticker', String(255), nullable=False),\n    Column('name', String(255), nullable=False),\n    Column('volume', Integer, nullable=False),  \n    Column('price', DECIMAL(10, 2), nullable=False),\n    Column('change', DECIMAL(5, 2), nullable=False),\n    Column('date', DateTime)  # Adding a date column if needed\n)\n# Create tables in the database",
+        "detail": "db_operations",
+        "documentation": {}
+    },
+    {
+        "label": "fetch_news_data",
+        "kind": 2,
+        "importPath": "news",
+        "description": "news",
+        "peekOfCode": "def fetch_news_data():\n    response = requests.get(API_URL)\n    if response.status_code == 200:\n        data = response.json()\n        # Try different possible keys\n        if 'news' in data:\n            return data['news']\n        elif 'News' in data:\n            return data['News']\n        else:",
+        "detail": "news",
+        "documentation": {}
+    },
+    {
+        "label": "API_URL",
+        "kind": 5,
+        "importPath": "news",
+        "description": "news",
+        "peekOfCode": "API_URL = os.getenv('NEWS_API_URL')\n# Fetch news from the NewsWorld API\ndef fetch_news_data():\n    response = requests.get(API_URL)\n    if response.status_code == 200:\n        data = response.json()\n        # Try different possible keys\n        if 'news' in data:\n            return data['news']\n        elif 'News' in data:",
+        "detail": "news",
+        "documentation": {}
+    },
+    {
+        "label": "fetch_stock_data",
+        "kind": 2,
+        "importPath": "stocks",
+        "description": "stocks",
+        "peekOfCode": "def fetch_stock_data():\n    conn = http.client.HTTPSConnection(RAPIDAPI_HOST)\n    headers = {\n        'x-rapidapi-key': RAPIDAPI_KEY,\n        'x-rapidapi-host': RAPIDAPI_HOST\n    }\n    conn.request(\"GET\", RAPIDAPI_PATH, headers=headers)\n    res = conn.getresponse()\n    data = res.read()\n    stock_data = json.loads(data.decode(\"utf-8\"))",
+        "detail": "stocks",
+        "documentation": {}
+    },
+    {
+        "label": "RAPIDAPI_KEY",
+        "kind": 5,
+        "importPath": "stocks",
+        "description": "stocks",
+        "peekOfCode": "RAPIDAPI_KEY = os.getenv('RAPIDAPI_KEY')\nRAPIDAPI_PATH = os.getenv(\"RAPIDAPI_PATH\")\nRAPIDAPI_HOST = os.getenv('RAPIDAPI_HOST')\ndef fetch_stock_data():\n    conn = http.client.HTTPSConnection(RAPIDAPI_HOST)\n    headers = {\n        'x-rapidapi-key': RAPIDAPI_KEY,\n        'x-rapidapi-host': RAPIDAPI_HOST\n    }\n    conn.request(\"GET\", RAPIDAPI_PATH, headers=headers)",
+        "detail": "stocks",
+        "documentation": {}
+    },
+    {
+        "label": "RAPIDAPI_PATH",
+        "kind": 5,
+        "importPath": "stocks",
+        "description": "stocks",
+        "peekOfCode": "RAPIDAPI_PATH = os.getenv(\"RAPIDAPI_PATH\")\nRAPIDAPI_HOST = os.getenv('RAPIDAPI_HOST')\ndef fetch_stock_data():\n    conn = http.client.HTTPSConnection(RAPIDAPI_HOST)\n    headers = {\n        'x-rapidapi-key': RAPIDAPI_KEY,\n        'x-rapidapi-host': RAPIDAPI_HOST\n    }\n    conn.request(\"GET\", RAPIDAPI_PATH, headers=headers)\n    res = conn.getresponse()",
+        "detail": "stocks",
+        "documentation": {}
+    },
+    {
+        "label": "RAPIDAPI_HOST",
+        "kind": 5,
+        "importPath": "stocks",
+        "description": "stocks",
+        "peekOfCode": "RAPIDAPI_HOST = os.getenv('RAPIDAPI_HOST')\ndef fetch_stock_data():\n    conn = http.client.HTTPSConnection(RAPIDAPI_HOST)\n    headers = {\n        'x-rapidapi-key': RAPIDAPI_KEY,\n        'x-rapidapi-host': RAPIDAPI_HOST\n    }\n    conn.request(\"GET\", RAPIDAPI_PATH, headers=headers)\n    res = conn.getresponse()\n    data = res.read()",
+        "detail": "stocks",
+        "documentation": {}
+    }
+]
