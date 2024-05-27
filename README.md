@@ -1,10 +1,10 @@
 ### 📈 Stock Price Prediction with News Sentiment Analysis 📰
 
-This data pipeline project combines several elements: Public API access, data pipelines with MySQL, and Python for data manipulation, machine learning, and visualization.
+This data pipeline project moves data from API's to an SQL database and combines several elements: Public API access, data pipelines with MySQL, and Python for data manipulation, machine learning, and visualization.
 
 #### Data Sources:
-- 📊 **Stock Data API:** Utilized [Alpha Vantage](https://www.alphavantage.co/) to retrieve historical and real-time stock price data.
-- 📰 **News API:** Integrated a news API like Google News API to gather news articles related to specific companies.
+- 📊 **Stock Data API:** Utilized [Rapid API/Nairobi Stock Exchange](https://rapidapi.com/iancenry/api/nairobi-stock-exchange-nse/) to retrieve historical and real-time stock price data.
+- 📰 **News API:** Integrated [World News API](https://www.worldnewsapi.com/) to gather news articles related to Safaricom company which I chose. You need to obtain an API key to make requests to the API and add request params such as source-countries = 'ke' and text = 'safaricom' to get specific news.
 
 #### SQL Schema and Tables:
 - 🗃️ **Stocks Data Table:** Stores historical stock data including ticker, name, volume, price, change, and date.
@@ -22,8 +22,11 @@ This data pipeline project combines several elements: Public API access, data pi
 
 #### Files Description:
 - ⚙️ **db_config.py:** Contains the database configuration settings.
-- 🔄 **load_model.py:** Loads the model, performs data preprocessing, and evaluates the model.
-- 🚀 **index.py:** Main file to run the project.
+- 🔄 **db_operations.py:** Handles database operations such as connecting to the database, executing queries, and fetching results.
+- 🚀 **load_model.py:** Loads the machine learning model, performs data preprocessing, and evaluates the model's performance.
+- 📰 **load_news_pipeline.py:** Implements the pipeline for fetching and processing news data, including sentiment analysis.
+- 📊 **load_stocks_pipeline.py:** Implements the pipeline for fetching and processing stock data from the API.
+- 🔧 **transform_pipeline.py:** Contains functions for processing, transforming and cleaning data for machine learning models.
 
 #### Environment Variables (`.env` file):
 - Contains sensitive information such as API keys and database credentials. Not included in the repository.
@@ -40,7 +43,7 @@ This data pipeline project combines several elements: Public API access, data pi
 4. Run `python index.py` to execute the project.
 
 ### Stock Prediction Graph:
-![Visualization](<img src=graph.png>) 
+![Visualization](<graph.png>) 
 
 ### Conclusion:
 This project showcases the integration of multiple APIs, data analysis, sentiment analysis, feature engineering, and machine learning for stock price prediction.
