@@ -38,9 +38,26 @@ This data pipeline project moves data from API's to an SQL database and combines
 
 #### To Run the Project:
 1. Clone the repository.
-2. Create a `.env` file with API keys and database credentials.
-3. Install dependencies (`pip install -r requirements.txt`).
-4. Run `python index.py` to execute the project.
+   ```bash
+   git clone https://github.com/Moddic10/StockNews--SentimentAnalyis.git
+   cd StockNews--SentimentAnalyis
+   ```
+3. Create a `.env` file in the root directory of the project and add the following environment variables:
+  ```text
+  NEWS_API_URL=https://api.worldnewsapi.com/search-news?text=safaricom&source-countries=ke&language=en&api-key=your_news_api_key_here
+  
+  RAPIDAPI_KEY=your_rapidapi_key_here
+  RAPIDAPI_HOST=nairobi-stock-exchange-nse.p.rapidapi.com
+  RAPIDAPI_PATH=/stocks/Safaricom
+  
+  DB_USER=your_database_user_here
+  DB_PASSWORD=your_database_password_here
+  DB_HOST=your_database_host_here
+  DB_NAME=your_database_name_here
+  DB_TABLE=your_database_table_here
+  ```
+4. Install dependencies (`pip install -r requirements.txt`).
+5. Run `python load_stocks_pipeline.py` to execute the project.
 
 ### Stock Prediction Graph:
 ![Visualization](<graph.png>) 
