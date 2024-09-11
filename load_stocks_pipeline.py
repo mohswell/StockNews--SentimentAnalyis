@@ -29,6 +29,6 @@ if __name__ == "__main__":
     try:
         stock_data = fetch_stock_data()[0]  # Assuming the API returns a list of stocks
         store_stock_data(stock_data)
-        print("Stock data fetched and stored successfully.")
+        #print("Stock data fetched and stored successfully.")
     except Exception as e:
         print(f"Error fetching or storing stock data: {e}")
