@@ -39,7 +39,7 @@ This data pipeline project moves data from API's to an SQL database and combines
 #### To Run the Project:
 1. Clone the repository.
    ```bash
-   git clone https://github.com/Moddic10/StockNews--SentimentAnalyis.git
+   git clone https://github.com/mohswell/StockNews--SentimentAnalyis.git
    cd StockNews--SentimentAnalyis
    ```
 3. Create a `.env` file in the root directory of the project and add the following environment variables:
