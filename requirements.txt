@@ -7,3 +7,5 @@ numpy==1.22.0
 mysql-connector-python==8.0.28
 nltk==3.6.5
 textblob==0.15.3
+protobuf>=6.33.5 # not directly required, pinned by Snyk to avoid a vulnerability
+zipp>=3.19.1 # not directly required, pinned by Snyk to avoid a vulnerability
